@@ -65,22 +65,49 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text>(Присвоить значение) лист хранящий результаты к первому заданию</Text>
+        <Text>(Присвоить значение) лист хранящий результаты к второму заданию</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
       <AbstractStep z:Id="i10" i:type="ExecutedStep">
         <Childs />
-        <Id>4a4e7469-d78e-411f-be04-ee1dc1723b86</Id>
+        <Id>26f3c42a-ce54-42e8-adb1-1023fcfdb885</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
           <PropertyValue z:Id="i11">
+            <PropertyName>Value</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>new List&lt;List&lt;System.Xml.Linq.XElement&gt;&gt;()</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i12">
+            <PropertyName>To</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>list_task3</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text>(Присвоить значение) лист хранящий результаты к третьему заданию</Text>
+        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i13" i:type="ExecutedStep">
+        <Childs />
+        <Id>4a4e7469-d78e-411f-be04-ee1dc1723b86</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i14">
             <PropertyName>DirPath</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>Path.Combine(Directory.GetCurrentDirectory(),"IN")</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i12">
+          <PropertyValue z:Id="i15">
             <PropertyName>ListFilesOrCatalogs</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>list_path</_expression>
@@ -95,648 +122,1146 @@
         <Text>(Получить пути к файлам/каталогам) получение путей для входных xml файлов </Text>
         <_activityFullName>Activities.Files.GetListFilesOrCatalogs</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i13" i:type="CommentStep">
-        <Childs />
-        <Id>31698385-fb7a-4376-88ab-d203fe507eb0</Id>
+      <AbstractStep z:Id="i16" i:type="ExecutedStep">
+        <Childs>
+          <AbstractStep z:Id="i17" i:type="ExecutedStep">
+            <Childs />
+            <Id>8db681b4-ff16-4e9d-b5ec-bc6c5c75e112</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i18">
+                <PropertyName>FilePath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_path[0]</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i19">
+                <PropertyName>Encode</PropertyName>
+                <_dataType>Value</_dataType>
+                <_expression i:nil="true" />
+                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:string">utf-8</_value>
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i20">
+                <PropertyName>Content</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>str_textXML</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Прочитать файл) прочитать файл первого задания</Text>
+            <_activityFullName>Activities.Files.ReadFile</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i21" i:type="ExecutedStep">
+            <Childs />
+            <Id>5e0de2ac-31d3-4a59-82ac-8f14c3768cc8</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i22">
+                <PropertyName>XmlString</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>str_textXML</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i23">
+                <PropertyName>Result</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(XML) парсинг файла </Text>
+            <_activityFullName>Activities.Parsing.XMLParsing</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i24" i:type="CommentStep">
+            <Childs />
+            <Id>e7785b20-06e6-48c4-b0cc-14de51013045</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 1.1</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i25" i:type="ExecutedStep">
+            <Childs />
+            <Id>e66c385b-c1fd-42bb-9bd8-ccaec52be4cc</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i26">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("persons")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i27">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"//person[phone]"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i28">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Выбрать людей, у которых есть телефон.</Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i29" i:type="ExecutedStep">
+            <Childs />
+            <Id>f41efbba-9366-4daa-b102-4bc06f8a532b</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i30">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task1</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i31">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i32" i:type="CommentStep">
+            <Childs />
+            <Id>d9bd7380-e6d3-48ca-9153-06b046bba5da</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 1.2</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i33" i:type="ExecutedStep">
+            <Childs />
+            <Id>b4015864-14c1-407d-ade1-16d9e85d0fb0</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i34">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("persons")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i35">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"//person[phone/@type='mobile']"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i36">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Выбрать людей, у которых есть мобильный телефон.</Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i37" i:type="ExecutedStep">
+            <Childs />
+            <Id>41ba8d7b-5397-4491-bc0e-8308eac08a4e</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i38">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task1</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i39">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i40" i:type="CommentStep">
+            <Childs />
+            <Id>20f4b2b0-d954-4e0d-a9e3-0ebfe79a69d9</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 1.3</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i41" i:type="ExecutedStep">
+            <Childs />
+            <Id>0d2ec08b-2f10-4c00-acc8-061e0392fa8a</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i42">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("persons")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i43">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"//person[phone/@type='mobile' and phone/@type='work']"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i44">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Выбрать людей, у которых есть и рабочий, и мобильный телефон.</Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i45" i:type="ExecutedStep">
+            <Childs />
+            <Id>a7c4ed80-48ad-4653-ac18-c4c7aad8f98e</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i46">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task1</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i47">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i48" i:type="CommentStep">
+            <Childs />
+            <Id>f6b4fa53-dee9-453e-a313-61b40ab9507c</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 1.4</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i49" i:type="ExecutedStep">
+            <Childs />
+            <Id>3cce666a-4640-49e3-aa2e-9647740199e8</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i50">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("persons")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i51">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"//person[starts-with(email, concat(login, '@'))]"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i52">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Выбрать людей, у которых email начинается с login@.</Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i53" i:type="ExecutedStep">
+            <Childs />
+            <Id>d57ae309-1b19-494b-b44a-4d9b8bcdba9d</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i54">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task1</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i55">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i56" i:type="CommentStep">
+            <Childs />
+            <Id>b1b3935c-7ec0-4feb-95a8-444b7f16d2b1</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 1.5</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i57" i:type="ExecutedStep">
+            <Childs />
+            <Id>e22e069b-cd6b-4de8-ad8d-921b5a37e5ed</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i58">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("persons")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i59">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"//person[group='html']"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i60">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Выбрать людей, принадлежащих к группе html. </Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i61" i:type="ExecutedStep">
+            <Childs />
+            <Id>29af7b74-5724-46ce-a57c-23b76e8d5746</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i62">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task1</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i63">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i64" i:type="CommentStep">
+            <Childs />
+            <Id>e4fdcbac-ca24-4f5d-854e-70bd799b046a</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 1.6</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i65" i:type="CommentStep">
+            <Childs />
+            <Id>3ceb67c0-57c1-4326-8b15-8298e6c3b47e</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>P.s поправил исходнное задание ,чтобы было наглядней ,теперь ищем логин длинее 5 ,а не 3 </Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i66" i:type="ExecutedStep">
+            <Childs />
+            <Id>7ffe1592-17e4-4dbc-9652-b7b8a86b0166</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i67">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("persons")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i68">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"//person[string-length(login) &gt; 5]"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i69">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Выбрать людей, у которых "длинный" логин (длиннее пяти символов).</Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i70" i:type="ExecutedStep">
+            <Childs />
+            <Id>1acb4f08-208b-4d9d-8720-fbe0b041d7f5</Id>
+            <Parent z:Ref="i16" />
+            <PropertyValues>
+              <PropertyValue z:Id="i71">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task1</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i72">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+        </Childs>
+        <Id>e8c13dc8-1547-4dc5-92b2-ae01ef9bf53c</Id>
         <Parent z:Ref="i2" />
         <PropertyValues />
         <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
         <Text>Задача №1</Text>
+        <_activityFullName>BR.Core.Base.Container</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i14" i:type="ExecutedStep">
-        <Childs />
-        <Id>8db681b4-ff16-4e9d-b5ec-bc6c5c75e112</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i15">
-            <PropertyName>FilePath</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_path[0]</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i16">
-            <PropertyName>Encode</PropertyName>
-            <_dataType>Value</_dataType>
-            <_expression i:nil="true" />
-            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:string">utf-8</_value>
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i17">
-            <PropertyName>Content</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>str_textXML</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Прочитать файл) прочитать файл первого задания</Text>
-        <_activityFullName>Activities.Files.ReadFile</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i18" i:type="ExecutedStep">
-        <Childs />
-        <Id>5e0de2ac-31d3-4a59-82ac-8f14c3768cc8</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i19">
-            <PropertyName>XmlString</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>str_textXML</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i20">
-            <PropertyName>Result</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>xml_document</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(XML) парсинг файла </Text>
-        <_activityFullName>Activities.Parsing.XMLParsing</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i21" i:type="CommentStep">
-        <Childs />
-        <Id>e7785b20-06e6-48c4-b0cc-14de51013045</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues />
-        <SelectedOptionId i:nil="true" />
-        <Text>Подпункт 1.1</Text>
-      </AbstractStep>
-      <AbstractStep z:Id="i22" i:type="ExecutedStep">
-        <Childs />
-        <Id>e66c385b-c1fd-42bb-9bd8-ccaec52be4cc</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i23">
-            <PropertyName>XmlElement</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>xml_document.Element("persons")</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i24">
-            <PropertyName>XPath</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>"//person[phone]"</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i25">
-            <PropertyName>ResultList</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Найти узлы XML по XPATH) Выбрать людей, у которых есть телефон.</Text>
-        <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i26" i:type="ExecutedStep">
-        <Childs />
-        <Id>f41efbba-9366-4daa-b102-4bc06f8a532b</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i27">
-            <PropertyName>List</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_task1</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i28">
-            <PropertyName>Object</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
-        <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i29" i:type="CommentStep">
-        <Childs />
-        <Id>d9bd7380-e6d3-48ca-9153-06b046bba5da</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues />
-        <SelectedOptionId i:nil="true" />
-        <Text>Подпункт 1.2</Text>
-      </AbstractStep>
-      <AbstractStep z:Id="i30" i:type="ExecutedStep">
-        <Childs />
-        <Id>b4015864-14c1-407d-ade1-16d9e85d0fb0</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i31">
-            <PropertyName>XmlElement</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>xml_document.Element("persons")</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i32">
-            <PropertyName>XPath</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>"//person[phone/@type='mobile']"</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i33">
-            <PropertyName>ResultList</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Найти узлы XML по XPATH) Выбрать людей, у которых есть мобильный телефон.</Text>
-        <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i34" i:type="ExecutedStep">
-        <Childs />
-        <Id>41ba8d7b-5397-4491-bc0e-8308eac08a4e</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i35">
-            <PropertyName>List</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_task1</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i36">
-            <PropertyName>Object</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
-        <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i37" i:type="CommentStep">
-        <Childs />
-        <Id>20f4b2b0-d954-4e0d-a9e3-0ebfe79a69d9</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues />
-        <SelectedOptionId i:nil="true" />
-        <Text>Подпункт 1.3</Text>
-      </AbstractStep>
-      <AbstractStep z:Id="i38" i:type="ExecutedStep">
-        <Childs />
-        <Id>0d2ec08b-2f10-4c00-acc8-061e0392fa8a</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i39">
-            <PropertyName>XmlElement</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>xml_document.Element("persons")</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i40">
-            <PropertyName>XPath</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>"//person[phone/@type='mobile' and phone/@type='work']"</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i41">
-            <PropertyName>ResultList</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Найти узлы XML по XPATH) Выбрать людей, у которых есть и рабочий, и мобильный телефон.</Text>
-        <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i42" i:type="ExecutedStep">
-        <Childs />
-        <Id>a7c4ed80-48ad-4653-ac18-c4c7aad8f98e</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i43">
-            <PropertyName>List</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_task1</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i44">
-            <PropertyName>Object</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
-        <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i45" i:type="CommentStep">
-        <Childs />
-        <Id>f6b4fa53-dee9-453e-a313-61b40ab9507c</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues />
-        <SelectedOptionId i:nil="true" />
-        <Text>Подпункт 1.4</Text>
-      </AbstractStep>
-      <AbstractStep z:Id="i46" i:type="ExecutedStep">
-        <Childs />
-        <Id>3cce666a-4640-49e3-aa2e-9647740199e8</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i47">
-            <PropertyName>XmlElement</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>xml_document.Element("persons")</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i48">
-            <PropertyName>XPath</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>"//person[starts-with(email, concat(login, '@'))]"</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i49">
-            <PropertyName>ResultList</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Найти узлы XML по XPATH) Выбрать людей, у которых email начинается с login@.</Text>
-        <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i50" i:type="ExecutedStep">
-        <Childs />
-        <Id>d57ae309-1b19-494b-b44a-4d9b8bcdba9d</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i51">
-            <PropertyName>List</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_task1</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i52">
-            <PropertyName>Object</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
-        <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i53" i:type="CommentStep">
-        <Childs />
-        <Id>b1b3935c-7ec0-4feb-95a8-444b7f16d2b1</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues />
-        <SelectedOptionId i:nil="true" />
-        <Text>Подпункт 1.5</Text>
-      </AbstractStep>
-      <AbstractStep z:Id="i54" i:type="ExecutedStep">
-        <Childs />
-        <Id>e22e069b-cd6b-4de8-ad8d-921b5a37e5ed</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i55">
-            <PropertyName>XmlElement</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>xml_document.Element("persons")</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i56">
-            <PropertyName>XPath</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>"//person[group='html']"</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i57">
-            <PropertyName>ResultList</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Найти узлы XML по XPATH) Выбрать людей, принадлежащих к группе html. </Text>
-        <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i58" i:type="ExecutedStep">
-        <Childs />
-        <Id>29af7b74-5724-46ce-a57c-23b76e8d5746</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i59">
-            <PropertyName>List</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_task1</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i60">
-            <PropertyName>Object</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
-        <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i61" i:type="CommentStep">
-        <Childs />
-        <Id>e4fdcbac-ca24-4f5d-854e-70bd799b046a</Id>
+      <AbstractStep z:Id="i73" i:type="ExecutedStep">
+        <Childs>
+          <AbstractStep z:Id="i74" i:type="ExecutedStep">
+            <Childs />
+            <Id>ce234274-bfc7-4f3c-a189-41aafec349d1</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues>
+              <PropertyValue z:Id="i75">
+                <PropertyName>FilePath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_path[1]</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i76">
+                <PropertyName>Encode</PropertyName>
+                <_dataType>Value</_dataType>
+                <_expression i:nil="true" />
+                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:string">utf-8</_value>
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i77">
+                <PropertyName>Content</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>str_textXML</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Прочитать файл) прочитать файл второго задания</Text>
+            <_activityFullName>Activities.Files.ReadFile</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i78" i:type="ExecutedStep">
+            <Childs />
+            <Id>7b086569-7c16-4ffa-a288-ea115ad6c567</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues>
+              <PropertyValue z:Id="i79">
+                <PropertyName>XmlString</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>str_textXML</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i80">
+                <PropertyName>Result</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(XML) парсинг файла </Text>
+            <_activityFullName>Activities.Parsing.XMLParsing</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i81" i:type="CommentStep">
+            <Childs />
+            <Id>3b9bce4c-adc9-4050-a04c-3a755ddae7e6</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 2.1</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i82" i:type="ExecutedStep">
+            <Childs />
+            <Id>7c04f172-133d-432f-96f5-6a1178441a97</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues>
+              <PropertyValue z:Id="i83">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("items")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i84">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"// * [count(ancestor:: * )mod 2 = 0]"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i85">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Выбрать все ноды, "глубина залегания" которых является четным числом (для корневого элемента "глубина" равно 0.</Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i86" i:type="ExecutedStep">
+            <Childs />
+            <Id>d7c941a1-49e2-4392-8b64-ef267fbe9f62</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues>
+              <PropertyValue z:Id="i87">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task2</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i88">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i89" i:type="CommentStep">
+            <Childs />
+            <Id>1341c050-bf8b-4add-b190-666882f59d3b</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 2.2</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i90" i:type="ExecutedStep">
+            <Childs />
+            <Id>8d4d9cb2-995d-4128-b75e-fa4fec79b712</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues>
+              <PropertyValue z:Id="i91">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("items")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i92">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"//item[preceding-sibling::item and following-sibling::item]"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i93">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Выбрать все ноды, у которых есть "старший брат" и "младший брат".</Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i94" i:type="ExecutedStep">
+            <Childs />
+            <Id>c6bcc9eb-b72f-40b7-8252-2150319ba7d0</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues>
+              <PropertyValue z:Id="i95">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task2</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i96">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i97" i:type="CommentStep">
+            <Childs />
+            <Id>2a6e641b-805c-4b83-8f5e-5b7a0cf565d5</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 2.3</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i98" i:type="ExecutedStep">
+            <Childs />
+            <Id>97bc79fe-3eba-4631-8fff-e622b59f6549</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues>
+              <PropertyValue z:Id="i99">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("items")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i100">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"//item[count(.//item) = 6]"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i101">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Выбрать все ноды, у "деда" которых ровно 6 потомков.</Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i102" i:type="ExecutedStep">
+            <Childs />
+            <Id>4b87747c-31d5-4499-80d0-ce1a4ed16ed2</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues>
+              <PropertyValue z:Id="i103">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task2</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i104">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i105" i:type="CommentStep">
+            <Childs />
+            <Id>82d8c29a-41b7-4d55-9ca7-3aa14294a6fc</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 2.4</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i106" i:type="ExecutedStep">
+            <Childs />
+            <Id>6e3753ad-2ebe-4a15-b9b3-8c570d6c0414</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues>
+              <PropertyValue z:Id="i107">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("items")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i108">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"// * [ancestor:: * [@class] and descendant:: * [@class]]"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i109">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Выбрать все ноды, у которых есть предок и потомок с одинаковым классом.</Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i110" i:type="ExecutedStep">
+            <Childs />
+            <Id>3f30bb87-a2cc-4677-9c59-6b2c5e0d9faa</Id>
+            <Parent z:Ref="i73" />
+            <PropertyValues>
+              <PropertyValue z:Id="i111">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task2</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i112">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+        </Childs>
+        <Id>97a3b5f5-375a-433a-b67f-de4d98bcf5ae</Id>
         <Parent z:Ref="i2" />
         <PropertyValues />
         <SelectedOptionId i:nil="true" />
-        <Text>Подпункт 1.6</Text>
-      </AbstractStep>
-      <AbstractStep z:Id="i62" i:type="CommentStep">
-        <Childs />
-        <Id>3ceb67c0-57c1-4326-8b15-8298e6c3b47e</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues />
-        <SelectedOptionId i:nil="true" />
-        <Text>P.s поправил исходнное задание ,чтобы было наглядней ,теперь ищем логин длинее 5 ,а не 3 </Text>
-      </AbstractStep>
-      <AbstractStep z:Id="i63" i:type="ExecutedStep">
-        <Childs />
-        <Id>7ffe1592-17e4-4dbc-9652-b7b8a86b0166</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i64">
-            <PropertyName>XmlElement</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>xml_document.Element("persons")</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i65">
-            <PropertyName>XPath</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>"//person[string-length(login) &gt; 5]"</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i66">
-            <PropertyName>ResultList</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text>(Найти узлы XML по XPATH) Выбрать людей, у которых "длинный" логин (длиннее пяти символов).</Text>
-        <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i67" i:type="ExecutedStep">
-        <Childs />
-        <Id>1acb4f08-208b-4d9d-8720-fbe0b041d7f5</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i68">
-            <PropertyName>List</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_task1</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i69">
-            <PropertyName>Object</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
-        <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i70" i:type="CommentStep">
-        <Childs />
-        <Id>184ba7f1-e3a8-46fe-821e-f6a5ea18c14d</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues />
-        <SelectedOptionId i:nil="true" />
         <Text>Задача №2</Text>
+        <_activityFullName>BR.Core.Base.Container</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i71" i:type="ExecutedStep">
-        <Childs />
-        <Id>3fccac31-d391-45d8-a3f7-f70b3b08ca91</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i72">
-            <PropertyName>FilePath</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_path[1]</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i73">
-            <PropertyName>Encode</PropertyName>
-            <_dataType>Value</_dataType>
-            <_expression i:nil="true" />
-            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:string">utf-8</_value>
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i74">
-            <PropertyName>Content</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>str_textXML</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Прочитать файл) прочитать файл первого задания</Text>
-        <_activityFullName>Activities.Files.ReadFile</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i75" i:type="ExecutedStep">
-        <Childs />
-        <Id>c911d229-b587-4011-ae79-8b5488253f13</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i76">
-            <PropertyName>XmlString</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>str_textXML</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i77">
-            <PropertyName>Result</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>xml_document</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(XML) парсинг файла </Text>
-        <_activityFullName>Activities.Parsing.XMLParsing</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i78" i:type="CommentStep">
-        <Childs />
-        <Id>d8166b0d-5aa4-4846-a7d3-636d84a659cc</Id>
+      <AbstractStep z:Id="i113" i:type="ExecutedStep">
+        <Childs>
+          <AbstractStep z:Id="i114" i:type="ExecutedStep">
+            <Childs />
+            <Id>d3d91a91-7c0e-417e-844c-128cc484795c</Id>
+            <Parent z:Ref="i113" />
+            <PropertyValues>
+              <PropertyValue z:Id="i115">
+                <PropertyName>FilePath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_path[2]</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i116">
+                <PropertyName>Encode</PropertyName>
+                <_dataType>Value</_dataType>
+                <_expression i:nil="true" />
+                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:string">utf-8</_value>
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i117">
+                <PropertyName>Content</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>str_textXML</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Прочитать файл) прочитать файл третьего задания</Text>
+            <_activityFullName>Activities.Files.ReadFile</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i118" i:type="ExecutedStep">
+            <Childs />
+            <Id>6e040f9b-a7dd-4179-9c95-d965bb2ee6c8</Id>
+            <Parent z:Ref="i113" />
+            <PropertyValues>
+              <PropertyValue z:Id="i119">
+                <PropertyName>XmlString</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>str_textXML</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i120">
+                <PropertyName>Result</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(XML) парсинг файла </Text>
+            <_activityFullName>Activities.Parsing.XMLParsing</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i121" i:type="CommentStep">
+            <Childs />
+            <Id>b3327212-ebcb-49da-8592-03d230e0e20e</Id>
+            <Parent z:Ref="i113" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 3.1</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i122" i:type="ExecutedStep">
+            <Childs />
+            <Id>997154b1-6a38-4de8-ac74-316ba77dd261</Id>
+            <Parent z:Ref="i113" />
+            <PropertyValues>
+              <PropertyValue z:Id="i123">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("items")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i124">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"//item[value = position() * 10]"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i125">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Выбрать item'ы, у которых value совпадает с порядковым номером в списке, умноженным на 10.</Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i126" i:type="ExecutedStep">
+            <Childs />
+            <Id>b87e9dfa-0289-4716-996f-343d89770a5a</Id>
+            <Parent z:Ref="i113" />
+            <PropertyValues>
+              <PropertyValue z:Id="i127">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task3</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i128">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i129" i:type="CommentStep">
+            <Childs />
+            <Id>be5b7e59-82f0-4b3b-ab16-3a0699597131</Id>
+            <Parent z:Ref="i113" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 3.2</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i130" i:type="ExecutedStep">
+            <Childs />
+            <Id>3daf8126-5399-4c98-bb23-b17d215c2bbf</Id>
+            <Parent z:Ref="i113" />
+            <PropertyValues>
+              <PropertyValue z:Id="i131">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("items")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i132">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"//item[following-sibling::item[1]/value &lt; value]"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i133">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Выбрать itemы, у которых value больше, чем у следующего за ним itemа.</Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i134" i:type="ExecutedStep">
+            <Childs />
+            <Id>60d7e4d3-54d9-40d6-ad9d-5710e30417d9</Id>
+            <Parent z:Ref="i113" />
+            <PropertyValues>
+              <PropertyValue z:Id="i135">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task3</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i136">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i137" i:type="CommentStep">
+            <Childs />
+            <Id>516c5470-153e-4ee1-b549-4536c5a01d0b</Id>
+            <Parent z:Ref="i113" />
+            <PropertyValues />
+            <SelectedOptionId i:nil="true" />
+            <Text>Подпункт 3.3</Text>
+          </AbstractStep>
+          <AbstractStep z:Id="i138" i:type="ExecutedStep">
+            <Childs />
+            <Id>9f6e25e0-52f0-456e-9719-5e7b39052f9c</Id>
+            <Parent z:Ref="i113" />
+            <PropertyValues>
+              <PropertyValue z:Id="i139">
+                <PropertyName>XmlElement</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>xml_document.Element("items")</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i140">
+                <PropertyName>XPath</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>"// * [self::div[@id='parent'] or self::div/following-sibling::div[@id='parent']]/descendant-or-self:: * [contains(concat(@ * , .), 'child')]"</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i141">
+                <PropertyName>ResultList</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Найти узлы XML по XPATH) Для узлов с ID=’parent’ выбрать детей (потомки первого поколения), у которых хотя бы один атрибут или текст содержат слово «child» в любом регистре. </Text>
+            <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+          </AbstractStep>
+          <AbstractStep z:Id="i142" i:type="ExecutedStep">
+            <Childs />
+            <Id>32b8c11b-eb49-4d96-8bcd-39e41d3d2d23</Id>
+            <Parent z:Ref="i113" />
+            <PropertyValues>
+              <PropertyValue z:Id="i143">
+                <PropertyName>List</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_task3</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+              <PropertyValue z:Id="i144">
+                <PropertyName>Object</PropertyName>
+                <_dataType>Expression</_dataType>
+                <_expression>list_res</_expression>
+                <_value i:nil="true" />
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
+            </PropertyValues>
+            <SelectedOptionId i:nil="true" />
+            <EnableStatus>true</EnableStatus>
+            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+            <RetryCount>-1</RetryCount>
+            <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
+            <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
+          </AbstractStep>
+        </Childs>
+        <Id>d2b6772f-8d09-49cd-b095-800bc18bc9c9</Id>
         <Parent z:Ref="i2" />
         <PropertyValues />
         <SelectedOptionId i:nil="true" />
-        <Text>Подпункт 2.1</Text>
-      </AbstractStep>
-      <AbstractStep z:Id="i79" i:type="ExecutedStep">
-        <Childs />
-        <Id>b7934d9a-9fb2-4a78-beeb-e948d2fa9384</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i80">
-            <PropertyName>XmlElement</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>xml_document.Element("items")</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i81">
-            <PropertyName>XPath</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>"// * [count(ancestor:: * )%2 = 0]"</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i82">
-            <PropertyName>ResultList</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text>(Найти узлы XML по XPATH) Выбрать людей, у которых есть телефон.</Text>
-        <_activityFullName>Activities.Parsing.XMLGetNode</_activityFullName>
+        <Text>Задача №3</Text>
+        <_activityFullName>BR.Core.Base.Container</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i83" i:type="ExecutedStep">
-        <Childs />
-        <Id>9c8cdf62-462b-478a-9d0b-8edb6b10e3dc</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i84">
-            <PropertyName>List</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_task2</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i85">
-            <PropertyName>Object</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>list_res</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>(Поместить объект в список) сохранение результатов подпункта задания</Text>
-        <_activityFullName>Activities.BaseCollections.List.Add</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i86" i:type="ExecutedStep">
+      <AbstractStep z:Id="i145" i:type="ExecutedStep">
         <Childs />
         <Id>1b433612-d73a-4b8b-b74f-08803b1ef9b7</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i87">
+          <PropertyValue z:Id="i146">
             <PropertyName>Value</PropertyName>
             <_dataType>Value</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i88">
+          <PropertyValue z:Id="i147">
             <PropertyName>To</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression></_expression>
@@ -748,7 +1273,7 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>(Присвоить значение) проверкить ответы</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
     </Childs>
